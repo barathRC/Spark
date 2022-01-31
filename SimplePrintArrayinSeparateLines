@@ -1,0 +1,13 @@
+
+val weekdays = spark.sparkContext.parallelize(Array("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"),2)
+
+weekdays.collect().foreach(println)
+
+
+//Mon
+//Tue
+//Wed
+//Thu
+//Fri
+//Sat
+//Sun
