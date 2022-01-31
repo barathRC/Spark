@@ -1,0 +1,5 @@
+
+
+val Sparkfile = spark.read.textFile("/user/home/simple.txt")
+
+Sparkfile.collect().foreach(println)
