@@ -1,0 +1,3 @@
+
+
+empDF.join(deptDF,empDF("dept_id") === deptDF("id", "inner")
