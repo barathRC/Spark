@@ -1,0 +1,379 @@
+Scala Interview Questions and Answers for Spark Developers
+Last Updated: 06 Nov 2021
+When choosing a programming language for big data applications, Python and R are the most preferred programming languages among data scientists and Java is the go -to language for developing applications on Hadoop. With the enterprise adoption of Scala based big data frameworks like Apache Kafka and Apache Spark- Scala is becoming popular among big data professionals. Any developer in the big data world should be smart enough to learn a programming language that has some complexity. The statement “Scala is hard to master” is definitely true to some extent but the learning curve of Scala for Spark is well worth the time and money. Complex programming features like Macros, Tuples and Functions make it easy for spark developers to write better code and improve performance by programming in Scala. If you are being interviewed for any of the big data job openings that require Apache Spark skills, then it is quite likely that you will be asked questions around Scala programming language as Spark is written in Scala. What follows is a list of commonly asked Scala interview questions for Spark jobs.
+The most interesting part of learning Scala for Spark is the big data job trends. Consider all the popular functional programming languages supported by Apache Spark big data framework like Java, Python, R and Scala and look at the job trends. Of all the four programming languages supported by Spark, most of the big data job openings list Scala as a “must- have” programming skill for Apache Spark developers instead of Java, Python or R. Typesafe CEO Mark Brewer made a statement supporting the increasing demand for Scala developers –“We’re hearing about startups choosing Scala specifically because that’s where the best developers are now. We’ve also heard that Scala developers are consistently fetching $110K+ salaries, because they are in such high demand.”
+Scala Interview Questions and Answers
+1) What is a Scala Map?
+Scala Map is a collection of key value pairs wherein the value in a map can be retrieved using the key. Values in a Scala Map are not unique but the keys are unique. Scala supports two kinds of maps- mutable and immutable. By default, Scala supports immutable map and to make use of the mutable map, programmers have to import the scala.collection.mutable.Map class explicitly. When programmers want to use mutable and immutable map together in the same program then the mutable map can be accessed as mutable.map and the immutable map can just be accessed with the name of the map.
+2) What is the advantage of using Scala over other functional programming languages?
+As the name itself indicates Scala meaning Scalable Language, its high scalable, maintainability, productivity and testability features make it advantageous to use Scala.
+Singleton and Companion Objects in Scala provide a cleaner solution unlike static in other JVM languages like Java.
+It eliminates the need for having a ternary operator as if blocks’, ‘for- yield loops’, and ‘code’ in braces return a value in Scala.
+3) What is the advantage of companion objects in Scala?
+Classes in Scala programming language do not have static methods or variables but rather they have what is known as a Singleton object or Companion object. The companion objects in turn are compiled to classes which have static methods.
+A singleton object in Scala is declared using the keyword object as shown below –
+object Main {
+def sayHello () { println ("Hello!");
+} }
+In the above code snippet, Main is a singleton object and the method sayHello can be invoked using the following line of code –
+Main. SayHello ();
+If a singleton object has the same name as that of the class then it is known as a Companion object and it should be defined in the same source file as that of the class.
+class Main {
+def sayHelloWorld() {
+println("Hello World"); }
+}
+object Main {
+def sayHello() {
+println("Hello!"); }
+}
+Advantages of Companion Objects in Scala
+Companion objects are beneficial for encapsulating things and they act as a bridge for writing functional and object oriented programming code.
+Using companion objects, the Scala programming code can be kept more concise as the static keyword need not be added to each and every attribute.
+Companion objects provide a clear separation between static and non- static methods in a class because everything that is located inside a companion object is not a part of the class’s runtime objects but is available from a static context and vice versa.
+4) Which Scala library is used for functional programming?
+Scalaz library has purely functional data structures that complement the standard Scala library. It has pre-defined set of foundational type classes like Monad, Functor, etc.
+5) What do you understand by “Unit” and “()” in Scala?
+Unit is a subtype of scala.anyval and is nothing but Scala equivalent of Java void that provides the Scala with an abstraction of the java platform. Empty tuple i.e. () in Scala is a term that represents unit value.
+6) What is the difference between concurrency and parallelism?
+People often confuse with the terms concurrency and parallelism. When several computations execute sequentially during overlapping time periods it is referred to as concurrency whereas when processes are executed simultaneously it is known as parallelism. Parallel collection, Futures and Async library are examples of achieving parallelism in Scala.
+7) What is a Monad in Scala?
+The simplest way to define a monad is to relate it to a wrapper. Any class object is taken wrapped with a monad in Scala. Just like you wrap any gift or present into a shiny wrapper with ribbons to make them look attractive, Monads in Scala are used to wrap objects and provide two important operations –
+Identity through “unit” in Scala Bind through “flatMap” in Scala
+8) Differentiate between Val and var in Scala.
+Val and var are the two keywords used to define variables in Scala. Var keyword is just similar to variable declaration in Java whereas Val is little different. Once a variable is declared using Val the reference cannot be changed to point to another reference. This functionality of Val keyword in Scala can be related to the functionality of java final keyword. To simplify it, Val refers to immutable declaration of a variable whereas var refers to mutable declaration of a variable in Scala.
+9) What do you understand by a closure in Scala?
+Closure is a function in Scala where the return value of the function depends on the value of one or more variables that have been declared outside the function.
+10) What is Scala Future? How it differs from java.util.concurrent.Future?
+Scala Future is a monadic collection, which starts a background task. It is an object which holds the potential value or future value, which would be available after the task is completed. It also provides various operations to further chain the operations or to extract the value. Future also provide various call-back functions like onComplete, OnFailure, onSuccess to name a few, which makes Future a complete concurrent task class. The main and foremost difference between Scala’s Future and Java’s Future class is that the later does not provide promises/callbacks operations. The only way to retrieve the result is Future.get () in Java.
+11) What is Option in Scala? Why would you use it?
+It is used for representing whether a value is present or absent. Option collections can be used for wrapping missing values. It can also be seen as replacement for returning null values, which can be very helpful for reducing the occurrence of NullPointerException. The Option type itself is unimplemented but depends on two sub types: Some and None.
+One more example to describe functionality of Option type is to use it as a method return type, which tells the caller that the method can return a string or it can return none.
+12) What’s the difference ‘Nil’, ‘Null’, ‘None’ and ’Nothing’ in Scala?
+Null – It’s a sub-type of AnyRef type in Scala Types hierarchy. As Scala runs on JVM, it uses NULL to provide the compatibility with Java null keyword, or in Scala terms, to provide type for null keyword, Null type exists. It represents the absence of type information for complex types that are inherited from AnyRef.
+Nothing – It’s a sub-type of all the types exists in Scala Types hierarchy. It helps in providing the return type for the operations that can affect a normal program’s flow. It can only be used as a type, as instantiation of nothing cannot be done. It incorporates all types under AnyRef and AnyVal. Nothing is usually used as a return type for methods that have abnormal termination and result in an exception.
+Nil – It’s a handy way of initializing an empty list since, Nil, is an object, which extends List [Nothing].
+None – In programming, there are many circumstances, where we unexpectedly received null for the methods we call. In java these are handled using try/catch or left unattended causing errors in the program. Scala provides a very graceful way of handling those situations. In cases, where you don’t know, if you would be able to return a value as expected, we can use Option [T]. It is an abstract class, with just two sub-classes, Some [T] and none. With this, we can tell users that, the method might return a T of type Some [T] or it might return none.
+13) What is a Scala Trait?
+A trait is a special kind of Class that enables the use of multiple inheritance. Although a trait can extend only one class, but a class can have multiple traits. However, unlike classes, traits cannot be instantiated.
+14) When do you use Scala Traits?
+Traits are mostly used, when we require dependency injection. Unlike Java, through Spring framework, dependency injection is achieved through annotations. In Scala, there are no annotations or no special package to be imported. We just need to initialize the class with the trait and done, dependency is injected.
+15) What are the considerations you need to have when using Scala streams?
+Streams in Scala are a type of lazy collection, which are created using starting element and then recursively generated using those elements. Streams are like a List, except that, elements are added only when they are accessed, hence “lazy”. Since streams are lazy in terms of adding elements, they can be unbounded also, and once the elements are added, they are cached. Since Streams can be unbounded, and all the values are computed at the time of access, programmers need to be careful on using methods which are not transformers, as it may result in java.lang.OutOfMemoryErrors. stream.max
+stream.size
+stream.sum
+16) What do you understand by diamond problem and how does Scala resolve this?
+Multiple inheritance problem is referred to as the Deadly diamond problem or diamond problem. The inability to decide on which implementation of the method to choose is referred to as the Diamond Problem in Scala. Suppose say classes B and C both inherit from class A, while class D inherits from both class B and C. Now while implementing multiple inheritance if B and C override some method from class A, there is a confusion and dilemma always on which implementation D should inherit. This is what is referred to as diamond problem. Scala resolves diamond problem through the concept of Traits and class linearization rules.
+17) What is tail-recursion in Scala?
+There are several situations where programmers have to write functions that are recursive in nature. The main problem with recursive functions is that, it may eat up all the allocated stack space. To overcome this situation, Scala compiler provides a mechanism “tail recursion” to optimize these recursive functions so that it does not create new stack space, instead uses the current function stack space. To qualify for this, annotation “@annotation.tailrec” has to be used before defining the function and recursive call has to be the last statement, then only the function will compile otherwise, it will give an error. 18) What do you understand by Implicit Parameter?
+Wherever, we require that function could be invoked without passing all the parameters, we use implicit parameter. We provide the default values for all the parameters or parameters which we want to be used as implicit. When the function is invoked without passing the implicit parameters, local value of that parameter is used. We need to use implicit keyword to make a value, function parameter or variable as implicit.
+Explore Categories
+Machine Learning Projects Data Science Projects
+Python Projects for Data Science
+Data Science Projects in R
+Machine Learning Projects for Beginners
+Deep Learning Projects Neural Network Projects Tensorflow Projects NLP Projects
+Kaggle Projects
+IoT Projects
+Big Data Projects
+Hadoop Real-Time Projects Examples
+Spark Projects
+Data Analytics Projects for Students
+You might also like
+Data Scientist Salary
+How to Become a Data Scientist
+Data Analyst vs Data Scientist Data Scientist Resume
+Data Science Projects for Beginners
+Machine Learning Engineer
+Machine Learning Projects for Beginners
+Datasets
+Pandas Dataframe
+Machine Learning Algorithms
+Regression Analysis
+MNIST Dataset
+Data Science Interview Questions
+Python Data Science Interview Questions
+Spark Interview Questions Hadoop Interview Questions
+Data Analyst Interview Questions
+Machine Learning Interview Questions
+AWS vs Azure Hadoop Architecture Spark Architecture
+Tutorials
+Data Science Tutorial
+Jupyter Notebook Tutorial - A Complete Beginners Guide
+Best Python NumPy Tutorial for Beginners
+Tableau Tutorial for Beginners -Step by Step Guide
+MLOps Python Tutorial for Beginners -Get Started with MLOps
+Alteryx Tutorial for Beginners to Master Alteryx in 2021
+Relevant Projects
+               My Account Sign Out
+                                                             
+  
+  oject for alysis
+racle se-Part 2
+Project
+SQL Project for Da
+us
+Da
+Build a Churn Recommender
+Hands-On Approach to Master PyTorch Tensors with Examples
+New Projects
+MLOps Project to Deploy Resume Parser Model on Paperspace
+View Project
+View all New Projects
+SQL Project for Data Analysis using Oracle Database-Part 4
+Free Microsoft Power BI Tutorial for
+            ta Analysis ing Oracle
+tabase-Part
+View Project
+  3
+Model using Learning Project Ensemble for Beginners-4
+Prediction System Machine
+Beginners with Examples
+ Learning Theano Deep Learning Tutorial for Beginners
+            
+ View Project
+View Project
+View Project View Project
+Computer Vision Tutorial for Beginners | Learn Computer Vision
+Python Pandas Tutorial for Beginners - The A-Z Guide
+NumPy Python Tutorial for Beginners
+Hadoop Online Tutorial – Hadoop HDFS Commands Guide
+MapReduce Tutorial–Learn to implement Hadoop WordCount Example
+Hadoop Hive Tutorial-Usage of Hive Commands in HQL
+Hive Tutorial-Getting Started with Hive Installation on Ubuntu
+Learn Java for Hadoop Tutorial: Inheritance and Interfaces
+Learn Java for Hadoop Tutorial: Classes and Objects
+Learn Java for Hadoop Tutorial: Arrays
+Apache Spark Tutorial - Run your First Spark Program
+Best PySpark Tutorial for Beginners- Learn Spark with Python
+R Tutorial- Learn Data Visualization with R using GGVIS
+Neural Network Training Tutorial Python List Tutorial
+MatPlotLib Tutorial
+Decision Tree Tutorial
+Neural Network Tutorial
+Performance Metrics for Machine Learning Algorithms
+R Tutorial: Data.Table SciPy Tutorial
+Step-by-Step Apache Spark Installation Tutorial
+Introduction to Apache Spark Tutorial
+R Tutorial: Importing Data from Web
+R Tutorial: Importing Data from Relational Database
+R Tutorial: Importing Data from Excel
+Introduction to Machine Learning Tutorial
+Machine Learning Tutorial: Linear Regression
+Machine Learning Tutorial: Logistic Regression
+Support Vector Machine Tutorial (SVM)
+K-Means Clustering Tutorial
+dplyr Manipulation Verbs
+Introduction to dplyr package
+Importing Data from Flat Files in R
+Principal Component Analysis Tutorial
+Pandas Tutorial Part-3
+Pandas Tutorial Part-2
+Pandas Tutorial Part-1
+Tutorial- Hadoop Multinode Cluster Setup on Ubuntu
+Data Visualizations Tools in R
+R Statistical and Language tutorial
+Introduction to Data Science with R
+Apache Pig Tutorial: User Defined Function Example
+Apache Pig Tutorial Example: Web Log Server Analytics
+Impala Case Study: Web Traffic
+Impala Case Study: Flight Data Analysis
+Hadoop Impala Tutorial Apache Hive Tutorial: Tables
+Flume Hadoop Tutorial: Twitter Data Extraction
+Flume Hadoop Tutorial: Website Log Aggregation
+Hadoop Sqoop Tutorial: Example Data Export
+Hadoop Sqoop Tutorial: Example of Data Aggregation
+Apache Zookepeer Tutorial: Example of Watch Notification
+Apache Zookepeer Tutorial: Centralized Configuration Management
+Hadoop Zookeeper Tutorial for Beginners
+Hadoop Sqoop Tutorial
+Hadoop PIG Tutorial
+Hadoop Oozie Tutorial
+Hadoop NoSQL Database Tutorial Hadoop Hive Tutorial
+Hadoop HDFS Tutorial
+Hadoop hBase Tutorial
+Hadoop Flume Tutorial
+Hadoop 2.0 YARN Tutorial
+Hadoop MapReduce Tutorial
+Big Data Hadoop Tutorial for Beginners- Hadoop Installation
+Top 15 Latest Recipes
+Use of find next sibling function in beautiful soup
+Use of find next siblings function beautiful soup
+How to copy beautiful soup object
+Use of descendants function beautiful soup
+Use of ".previous_elements" function in beautiful soup
+Use of ".next_elements" function in beautiful soup
+Use of previous element function beautiful soup
+Use of next element function beautiful soup
+Use of previous siblings function beautiful soup
+Use of next siblings function beautiful soup
+Use of previous sibling function beautiful soup
+Use of next sibling function beautiful soup
+Use of ".parents" function in beautiful soup
+Use of ".parent" function in beautiful soup
+Use of stripped strings function beautiful soup
+   
+                   Get FREE Access to Data Analytics Example Codes for Data Cleaning, Data Munging, and Data Visualization
+                                 What is an option in Scala
+        Recommended Reading:
+100 Kafka Interview Questions and Answers for 2021
+Top 50 NLP Interview Questions and Answers for 2021
+20 Linear Regression Interview Questions and Answers 2021 Top 20 Logistic Regression Interview Questions and Answers
+   Option in Scala
+                    Get More Practice, More Big Data and Analytics Projects, and More guidance.Fast-Track Your Career Transition with ProjectPro
+           Apache Hive Projects Apache Pig Projects
+Apache Impala Projects Spark SQL Projects
+Spark Streaming Projects Apache Zepellin Projects
+Neo4j Projects Redis Projects
+Google Cloud Projects GCP AWS Projects
+19) How does yield work in Scala?
+The yield keyword if specified before the expression, the value returned from every expression, will be returned as the collection. The yield keyword is very useful, when there is a need, you want to use the return value of expression. The collection returned can be used the normal collection and iterate over in another loop.
+20) What do you understand by a case class in Scala?
+Case classes are standard classes declared with a special modifier case. Case classes export their constructor parameters and provide a recursive decomposition mechanism through pattern matching. The constructor parameters of case classes are treated as public values and can be accessed directly. For a case class, companion objects and its associated method also get generated automatically. All the methods in the class, as well, methods in the companion objects are generated based on the parameter list. The only advantage of Case class is that it automatically generates the methods from the parameter list.
+Features of Case Class in Scala
+Case objects and Case class are serializable by default. Case classes can be used for pattern matching.
+21) What is the use of Auxiliary Constructors in Scala?
+Auxiliary Constructor is the secondary constructor in Scala declared using the keywords “this” and “def”. The main purpose of using auxiliary constructors is to overload constructors. Just like in Java, we can provide implementation for different kinds of constructors so that the right one is invoked based on the requirements. Every auxiliary constructor in Scala should differ in the number of parameters or in data types.
+22) Differentiate between Array and List in Scala.
+List is an immutable recursive data structure whilst array is a sequential mutable data structure.
+Lists are covariant whilst array are invariants.
+The size of a list automatically increases or decreases based on the operations that are performed on it i.e. a list in Scala is a variable-sized data structure whilst an array is fixed size data structure.
+23) What do you understand by apply and unapply methods in Scala?
+apply and unapply methods in Scala are used for mapping and unmapping data between form and model data.
+Apply method – Used to assemble an object from its components. For example, if we want to create an Employee object then use the two components firstName and lastName and compose the Employee object using the apply method.
+Unapply method – Used to decompose an object from its components. It follows the reverse process of apply method. So if you have an employee object, it can be decomposed into two components- firstName and lastName. 24) Can a companion object in Scala access the private members of its companion class in Scala?
+According to the private access specifier, private members can be accessed only within that class but Scala’s companion object and class provide special access to private members. A companion object can access all the private members of a companion class. Similarly, a companion class can access all the private members of companion objects.
+25) What is the advantage of having immutability in design for Scala programming language?
+Scala uses immutability by default in most of the cases as it helps resolve issues when dealing with concurrent programs and any other equality issues. 26) What is the use of Scala's App?
+App is a trait defined in scala package as "scala.App" which defines the main method. If an object or class extends this trait then they will become Scala executable programs automatically as they inherit the main method from application. Developers need not write main method when using App but the only drawback of using App is that developers have to use same name args to refer command line arguments because scala.App's main() method uses this name.
+27) “Scala is a fusion of object-oriented programming and functional programming concepts.” Justify.
+Scala implements object-oriented programming in pure form. This is because in Scala, every value is an object and every operator is a function call.
+In Scala, functions, Integer, strings are all given the same weightage. And, instead of changing the data in place, the operations in Scala map input values to output values. Thus, Scala is also a fully-fledged functional programming language.
+28) What do you think makes Scala a scalable programming language?
+The fact that Scala is a blend of object-oriented programming and functional programming is what makes it a scalable programming language. That is because certain techniques of both the programming types are needed to make a language scalable.
+29) Out of the three: List, Array, Tuple, which ones are mutable and which ones are immutable in Scala?
+List and Tuple are immutable, whereas arrays are mutable in Scala.
+30) What do you understand by Type inference in Scala?
+In Scala, if the programmer does not mention the variable’s data type, the Scala interpreter infers the data type on its own.
+For example,
+val words = “Hello World!”
+The data type of the val will be automatically identified as a string.
+31) For the following code:
+scala> def sayhello() = println("Hello, world!") sayhello: ()Unit
+How will you explain the output?
+The output of the code is sayhello: ()Unit where:
+1. sayhellorepresentsthenameofthefunctiondefinedbytheuser.
+2. Emptyparenthesessuggestthatthefunctiontakesnovalueasinput. 3. Unitrepresentsthedatatypeofthereturnedvalue.Thisissimilarto
+Java’s void data type.
+32) What is the error in the following code: vari=0
+while (j < args.length) {
+println(args(i))
+j++ }
+The expression “j++” doesn’t work in Scala. It should either be replaced with “j+=1” or “j=j+1”.
+33) What is the difference between println() and print() functions?
+The println() prints the argument received at the input in a new line every time it is called. On the other hand, print() does not add any new line after it prints the value passed at its input.
+Apache Hbase Projects Apache Oozie Projects
+Apache Flume Projects Spark GraphX Projects
+Spark MLlib Projects Apache Kafka Projects
+             Microsoft Azure Projects
+    How does Yield work in Scala
+ Build an Awesome Job Winning Project Portfolio with Solved End-to- End Big Data Projects
+34) List a few differences between Java and Scala.
+Java
+Java is a multi-platform, object-oriented, network-centric, programming language.
+Each statement in Java requires you to add a semicolon at the end.
+You can use the expressions i++ and ++i for Use of i++ and ++i is not permitted. incrementing an integer variable.
+In Java, you define a variable by first specifying its type and then its name, separated by a colon.
+Java uses square brackets to access elements of an array.
+In Java, you have to always explicitly mention the data type of the variable you are using.
+In Scala, more focus is on the variable’s name than its type. Thus, we type its name before we specify its data type.
+Scala uses parentheses to access elements of an array.
+Scala implements type inference. So, if you do not specify the data type of a variable, it will automatically infer its type.
+35) What is a partially applied function in Scala?
+Ans: A partially applied function is an expression where we don’t provide all of the arguments needed by the function. Instead, we give some, or none, of the required arguments.
+Example:
+def sum(x: Int, y: Int, z: Int) = x + y + z val a = sum _
+a(5,10.15)
+36) What is the args in Scala?
+Ans: args is a Scala array that makes the command line arguments to a Scala script available.
+37) Consider the following code:
+val welcomeStrings = new Array[String](3)
+welcomeStrings(0) = "Welcome"
+welcomeStrings(1) = "to "
+welcomeStrings(2) = "ProjectPro"
+The first line of the code mentions that the array welcomeStrings is of the “val” type. Then, how is it possible to change its values using the indices through the following 3 lines?
+Indeed, a variable can’t be reassigned a new value if one defines that variable using “val”. However, it is possible to make changes to the object the variable refers to.
+In the given example, we cannot reassign welcomeStrings to a different array, it will always refer to the same object of the Array[String] with which it was initialized. But, we can change the elements of that Array[String] over time, so the array itself is mutable.
+38) When working in Scala, it is often said that 1+2 means one is invoking a method “+” on the Int type object: 1 and passing 2 as a parameter. What do you understand by this statement?
+The statement highlights that Scala is a functional language where even integers are instances of a class Int. The class Int has a method ‘+’, which is invoked when a user types 1+2. This becomes more clear if we write 1+2 as (1).+(2).
+Deploying auto-reply Twitter handle with Kafka, Spark and LSTM
+Downloadable solution code | Explanatory videos | Tech Support
+Explore Project
+Scala
+Scala is a scalable language that implements both functional programming and object- oriented programming.
+A semicolon is not always required in Scala after each statement
+ Get confident to build end- to-end projects.
+Access to a curated library of 120+ end-to-end industry projects with solution code, videos and tech support.
+Request a demo
+                                        
+ 
+  B nC OC
+aM o
+w
+ 39) Why do you think could be a reason for utilizing parentheses to access elements of an array in Scala?
+As Scala is a functional language, it will transform the calls of accessing elements of an array arr through, say arr(arr_el) , into arr.apply(arr_el). Hence accessing array elements in Scala calls a function, and thus, parentheses are used.
+40) How will you write the following code in a concise manner in Scala? val HappyStrings = new Array[String](3)
+HappyStrings(0) = "Happy"
+HappyStrings(1) = "to "
+HappyStrings(2) = "have"
+HappyStrings(3) = "you"
+HappyStrings(4) = "at"
+HappyStrings(5) = "ProjectPro"
+The given code can be concisely written in Scala as:
+val HappyStrings = Array(“Happy to have you at ProjectPro”)
+41) Why does the Class List in Scala not offer the append function but offers to prepend function?
+Ans: This is because of the time it takes to perform both operations. For appending an element to a list in Scala, the time taken grows linearly with the size of the list whereas, prepending an element using the “::” operator takes constant time.
+However, if one wants to use the append function, they can use ListBuffer.
+42) What is the cap on the length of a tuple in Scala?
+One can only create tuples in Scala of the length two to twenty-two.
+43) What is wrong with the following code? class Calc {
+private var sum = 0
+}
+val acc = new Calc
+acc.sum = 5
+For declaring the field sum, a private access modifier has been used. Thus, the last line of the code “acc.sum=5” will not be compiled as the code is trying to access a field that is private to the class object.
+44) What will be the return type of the following variable?
+def g() { "ProjectPro projects are fun to read!" }
+In the given code, the equal to sign has been skipped. Thus, the Scala compiler will return a value of data type Unit.
+45) What are integral types and numerical types in the Scala programming language?
+Ans: Integral types: Byte, Short, Int, Long, and Char
+Numerical types: Integral types + Float and Double
+46) Do int and Int in Scala mean the same thing? If yes, why do we still see Scala programmers use Int more often than int?
+Ans: Yes, they both mean the same thing: scala.Int. The lower case aliases for Scala value types correspond to Java’s primitive types. Scala programmers stick to Int and not int as it is a Scala community-driven choice.
+47) How do you print a raw string in Scala? Give an example.
+A raw string in Scala can be printed by using the triple quotes ‘ “”” ‘. One should start and end the raw string with triple quotes to print the string as it is.
+Example:
+println("""Welcome to the blog website of ProjectPro
+Hit "LIKE" if you like our content.""")
+will print the string as
+Welcome to the blog website of ProjectPro
+Hit "LIKE" if you like our content.
+48) How will you manipulate the following code so that the output has no margins?
+println("""I enjoy reading ProjectPro blogs.
+They are very insightful.""")
+We can use the stripMargin function to get rid of the margins. For this, we need to add the pipe character before each line in the string and then implement stripMargin as follows:
+println("""| I enjoy reading ProjectPro blogs.
+| They are very insightful.""".stripMargin)
+49) What are infix, prefix, and postfix operator notations in Scala?
+Infix Operator Notation
+Theoperator(amethodinScala)toinvokelies between the object and the parameter or parameters one wishes to pass to the method.
+Ex: 7 + 2
+Prefix Operator Notation
+Themethodnameisplaced before the object on which one is invoking the method.
+Ex: -7
+Postfix Operator Notation The method is placed after the object
+Ex: “toLong” in “7 toLong”
+Create A Data Pipeline based on Messaging Using PySpark Hive
+View Project
+50) What is wrong with the following code?
+(2.0)unary_*
+If we consider (2.0)unary_-. This statement will be interpreted in Scala as -2.0. However, the code given in the question will not work as in Scala, only four prefixes are allowed to use. These are: +, -, !, and ~.
