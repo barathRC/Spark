@@ -1,0 +1,8 @@
+def keywordExists(line):
+   if (line.find(“my_keyword”) > -1):
+       return 1
+   return 0
+lines = sparkContext.textFile(“test_file.txt”);
+isExist = lines.map(keywordExists);
+sum = isExist.reduce(sum);
+print(“Found” if sum>0 else “Not Found”)
