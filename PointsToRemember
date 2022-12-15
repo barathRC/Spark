@@ -1,0 +1,22 @@
+
+SPARK CLUSTER ABD RUNTIME ARCHITECTURE
+
+Spark is a distributed cluster in-memory parallel processing framework
+Spark application is also distributed (driver JVM app and executor JVM app)
+
+Pyspark is a wrapper around Java wrapper inturn around spark core which is coded in Scala which runs on JVM
+Pyspark driver main() connects with JVM application driver main() with Py4j
+Scala directly JVM application driver
+
+When you do a spark submit, the RM (YARN) will spin up an Application Master(AM) in one of the worker node (4core 16GB RAM out of 16core 64GB RAM worker node)
+AM requests YARN RM to provision Executor containers. RM provisions the required Exec containers by spinning up them in the worker nodes 
+and providing them to the driver
+
+
+SPARK SUBMIT
+
+DEPLOY MODES CLIENT AND CLUSTER
+
+SPARK JOBS , STAGES, SHUFFLES, TASKS
+
+SPARK SQL ENGINER AND QUERY PLAN
