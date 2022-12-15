@@ -61,4 +61,20 @@ Similarly stages and tasks for each executor is determined by the driver itself!
 
 SPARK SQL ENGINER AND QUERY PLAN
 
+Spark API - SQL, Dataframe, Dataset 
+Dataset not available for pyspark since dataset is statically typed.
+Dataframe internally is a dataset.
+
+spark job sends unresolved plan to Spark SQL engine
+Each SQL expression is a job
+
+ANALYSIS                          LOGICAL OPTIMIZATION      PHYSICAL PLANNING                                        CODE GENRENATION (codegen) 
+Unres Logical Plan  - Logical plan  - Optimized Logical Plan  - pHYSICAL Plan - COST MODEL  - Selected Physical plan  - RDDs
+
+
+
+
+
+
+
 
