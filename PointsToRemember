@@ -10,10 +10,15 @@ Scala directly JVM application driver
 
 When you do a spark submit, the RM (YARN) will spin up an Application Master(AM) in one of the worker node (4core 16GB RAM out of 16core 64GB RAM worker node)
 AM requests YARN RM to provision Executor containers. RM provisions the required Exec containers by spinning up them in the worker nodes 
-and providing them to the driver
+and providing them to the App driver
+App Driver starts executors in the exec containers
 
 
 SPARK SUBMIT
+
+spark submit --class <main class; not for pysppark> --master<yarn,local[3]> --deploy-mode<client or cluster> --conf<spark.executor.memoryOverhead=0.20>
+--driver-cores <2> --driver-memory <8G> --num-executors <4> --executore-cores <4> --executor-memory<16G>
+
 
 DEPLOY MODES CLIENT AND CLUSTER
 
