@@ -22,6 +22,43 @@ spark submit --class <main class guru.learnjourn.hellospark; not for pyspark> --
 
 DEPLOY MODES CLIENT AND CLUSTER
 
+CLIENT
+For dev test. Interactive shows results.
+Driver is in the client machine. No AM. main() requests RM for executor resources.
+Shen u log off log off from the client machine the driver is killed, execuors are orphans, application is killed.
+
+CLUSTER
+For production
+Driver runs in worker node in the cluster.
+Even if u log off from the client machine the application runs.
+
+
 SPARK JOBS , STAGES, SHUFFLES, TASKS
 
+DATAFRAME API - 
+Transformations (Narrow dep [select(),filter(), drop(),withColumn()], Wide dep [join(),groupBy(),agg()])
+Actions (Triggers jobs - read() write() take() collect(), count()
+
+JOB
+Every code block with an action is a job.
+
+STAGE
+Multiple narrow transf followed by a single wide transf results in a stage
+Stage is sequential. Stage has multiple parallel tasks
+Stage writes results to Write exhange. Next stage reads this from the read exchange.
+read write echnage enables shuffle sort of data.
+
+TASK
+A task is the granular unit of work in each exec slot.
+Task is eq to the num of i/p partitions. If 20 partitions , 20 tasks can run in parallel
+
+If there are 20 tasks and 30 executor cores for a spark app, all the tasks can run in parallel
+If there are 60 tasks, 30 tasks must wait for slot availability
+
+Job is compiled in the driver to arrive a logical plan before spark sql engine optimizes it to a physical plan.
+Similarly stages and tasks for each executor is determined by the driver itself!
+
+
 SPARK SQL ENGINER AND QUERY PLAN
+
+
