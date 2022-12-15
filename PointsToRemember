@@ -16,8 +16,8 @@ App Driver starts executors in the exec containers
 
 SPARK SUBMIT
 
-spark submit --class <main class; not for pysppark> --master<yarn,local[3]> --deploy-mode<client or cluster> --conf<spark.executor.memoryOverhead=0.20>
---driver-cores <2> --driver-memory <8G> --num-executors <4> --executore-cores <4> --executor-memory<16G>
+spark submit --class <main class guru.learnjourn.hellospark; not for pyspark> --master<yarn,local[3]> --deploy-mode<client or cluster> --conf<spark.executor.memoryOverhead=0.20>
+--driver-cores <2> --driver-memory <8G> --num-executors <4> --executore-cores <4> --executor-memory<16G> <hello-spark.py/ hello-spark.jar>
 
 
 DEPLOY MODES CLIENT AND CLUSTER
