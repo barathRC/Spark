@@ -90,8 +90,19 @@ Log4j -
 
   SPARK_HOME/conf/spark-defaults.conf
    spark.driver.extraJavaoptions  - Dlog4j.configuration=file:log4j.properties -Dspark.yarn.app.container.log.dir=app_logs Dlog.file.name=hello-spark
-3) Create a python class to get SPark's Log4j instance.
+   
+3) Create a python class to get Spark's Log4j instance which has logger , WARN, INFO, ERROR, DEBUG methods.
 
+4) Invoke in the app's code.
+  Logger = log4j(spark)
+  logger.info(messages)
+  
+
+CONFIGURING SPARK SESSION:-
+1) Env variables - SPARK_HOME HADOOP_HOME PYSPARK_HOME - cluster admin - precedence 4
+2) SPARK_HOME/conf/spark-defaults.conf - cluster admin - precedence 3
+3) spark-submit command line options - developer - precedence 2
+4) sparkConf obj in the appl. - developer - precedence 1
 
 
 
