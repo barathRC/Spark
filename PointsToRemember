@@ -13,6 +13,8 @@ AM requests YARN RM to provision Executor containers. RM provisions the required
 and providing them to the App driver
 App Driver starts executors in the exec containers
 
+SparkSession is the Driver. Only one SparkSession is valid for an application similar to only oen driver.
+
 
 SPARK SUBMIT
 
@@ -75,6 +77,17 @@ Unres Logical Plan  - Logical plan  - Optimized Logical Plan  - pHYSICAL Plan - 
                   (To check for correct col names, syntax, references, functions, commands)
 
 
+Logging:-
+
+Log4j - 
+1) Create a Log4j config file (Logger, Configuration, Appender)
+
+  log4j.root.category = WARN,console
+  log4j.logger.guru.learning.jounrnal=INFO,console,file
+  log4j.appender.file.File=$(spark.yarn.app.container.log.dir)/$(logfile.name).log
+  
+2) Config Spark JVM to pickup the Log4j config file
+3) Create a python class to get SPark's Log4j instance.
 
 
 
