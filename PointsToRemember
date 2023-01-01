@@ -86,7 +86,10 @@ Log4j -
   log4j.logger.guru.learning.jounrnal=INFO,console,file
   log4j.appender.file.File=$(spark.yarn.app.container.log.dir)/$(logfile.name).log
   
-2) Config Spark JVM to pickup the Log4j config file
+2) Config Spark JVM to pickup the Log4j config file.
+
+  SPARK_HOME/conf/spark-defaults.conf
+   spark.driver.extraJavaoptions  - Dlog4j.configuration=file:log4j.properties -Dspark.yarn.app.container.log.dir=app_logs Dlog.file.name=hello-spark
 3) Create a python class to get SPark's Log4j instance.
 
 
