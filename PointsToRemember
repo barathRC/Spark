@@ -105,5 +105,33 @@ CONFIGURING SPARK SESSION:-
 4) sparkConf obj in the appl. - developer - precedence 1
 
 
+PYTEST:-
+
+from unittest import TestCase
+def method()
+self.assertEqual(df.count(),9,"Count is 9")
+
+
+DATAFRAME SOURCES AND SINKS:-
+DATAFRAME is a Row(DataSet)
+
+json does not need inferSchema .
+Parquet has schema inbuilt
+
+SPARK DBS and TABLES:-
+
+SQL Catalog
+
+SPARK WAREHOUSE - spark/sql/warehouse/dir for managed tables
+CATALOG METASTORE - HIVE METASTORE
+
+1) Managed - 
+2) External - specify location
+
+.saveasTable()
+(Both folders, files and tables can be accessed)
+Invoke using spark.sql
+
+
 
 
