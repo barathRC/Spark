@@ -144,8 +144,17 @@ spark.Executor.memory = 8GB
 (
 Reserved Memory = 300MB SPARK ENGINE
 8GB - 300 MB
+
 Spark Memory = 4620 MB sparl.memory.fraction = 0.6
+DATAFRAME OPERATIONS
+CACHING
+
 User Memory = 0.4 = 3080 mb
+UDF
+SPARK METADATA
+User defined data structure
+RDD operations and lineage dependancy
+
 )
 +
 spark.Executor.memoryOverhead = 10% 800 MB (400 mb FOR CONTAINER PROCESS. REMAINING FOR PYSPARK)
