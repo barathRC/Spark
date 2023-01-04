@@ -149,6 +149,16 @@ Spark Memory = 4620 MB sparl.memory.fraction = 0.6
 DATAFRAME OPERATIONS
 CACHING
 
+4620 MB sparl.memory.storage.fraction = 0.5
+
+STORAGE MEM POOL 2310 MB
+Caching
+
+
+EXEC MEM POOL 2310 MB
+DF operations
+
+
 User Memory = 0.4 = 3080 mb
 UDF
 SPARK METADATA
@@ -163,5 +173,9 @@ bUT 8.8 gb depends purely on yarn.scheduler.maximum.allocation.mb. If it is 6 GB
 spark.Executor.offHeap.Size = 0
 spark.Executor.PySpark.memory = 0  
 
+SPARK ADAPTIVE QUERY EXEUCTION:-
+1) Dynamically coalesing shuffle partitions
+2) Dynamically switching joi strategies
+3) Dynamically optimizing skew joins
 
 
