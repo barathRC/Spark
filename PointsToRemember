@@ -234,7 +234,7 @@ MERGEJOIN
 DF.HINT("repartion",10)
 
 
-
+SPECULATIVE EXECUTION is not for data skewness low memory (spark.speculation = "True")
 
 
 
