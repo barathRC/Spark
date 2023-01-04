@@ -217,3 +217,27 @@ df = spark.range(1,100000).toDF(""id)
   RANGE (1-10) (10-20) like that
   repartitionByRange(10), repartitionByRange(10,"age")
 
+HINTS:-
+
+PARTITION
+colesce
+repartion
+rebalance
+
+JOIN
+Broadcast
+BroadcastJoin 
+MapJoin
+MERGE SHIFFLEMERGE
+MERGEJOIN
+
+DF.HINT("repartion",10)
+
+
+
+
+
+
+
+
+
