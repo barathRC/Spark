@@ -191,4 +191,9 @@ spark.sql.adaptive.skewJoin.enabled
 DYNAMIC PARTITION PRUNING:-
 spark.sql.optimizer.dynamicPartitionPruning.enabled
 
+wORKS FOR FACT AND DIM like tables
+FACT table must be partitioned
+Broadcast msut be applied for dim table
+WHERE condition is on dim table for the join between FACT and DIM
+
 
