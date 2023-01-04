@@ -137,12 +137,16 @@ SPARK MEMORY ALLOCATION:-
 
 1) spark.driver.memory = 1 GB
                   +
-   spark.driver.memoryOverhead (CONTAINER or NON-JVM process) = 0.1 (10% or 384 MB)
+   spark.driver.memoryOverhead (CONTAINER or NON-JVM process) = 0.1 (10% or 384 MB) (150 mb FOR CONTAINER PROCESS. REMAINING FOR PYSPARK)
+                                                                bUFFER Exhange or reading parition data from remote store
 
-spark.Executor.memory = 
-spark.Executor.memoryOverhead =
-spark.Executor.offHeap.Size = 
-spark.Executor.PySpark.memory = 
+spark.Executor.memory = 8GB
++
+spark.Executor.memoryOverhead = 10% 800 MB (400 mb FOR CONTAINER PROCESS. REMAINING FOR PYSPARK)
+bUT 8.8 gb depends purely on yarn.scheduler.maximum.allocation.mb. If it is 6 GB then u cant get 8.8 GB
+
+spark.Executor.offHeap.Size = 0
+spark.Executor.PySpark.memory = 0  
 
 
 
