@@ -174,8 +174,21 @@ spark.Executor.offHeap.Size = 0
 spark.Executor.PySpark.memory = 0  
 
 SPARK ADAPTIVE QUERY EXEUCTION:-
-1) Dynamically coalesing shuffle partitions
-2) Dynamically switching joi strategies
+spark.sql.adaptive.enabled
+
+
+1) Dynamically coalesing shuffle partitions (dynamically computing statistics on the exchange tables/ files)
+spark.sql.adaptive.coleascePartitions.enabled
+  Determines and sets best shuffle partition number
+   Combine or coleasce small partitions
+   
+2) Dynamically switching join strategies
+  spark.sql.autoBroadcastJoinThreshold = 10MB
+  
 3) Dynamically optimizing skew joins
+spark.sql.adaptive.skewJoin.enabled
+
+DYNAMIC PARTITION PRUNING:-
+spark.sql.optimizer.dynamicPartitionPruning.enabled
 
 
