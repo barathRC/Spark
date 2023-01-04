@@ -197,3 +197,16 @@ Broadcast msut be applied for dim table
 WHERE condition is on dim table for the join between FACT and DIM
 
 
+
+CACHING:-
+
+cache and persist are lazy trans and only gets cached after an action.
+
+df = spark.range(1,100000).toDF(""id)
+    .repartition(10).withcolumn("swuare",expr(id*id)).cache() . / .persist(False,True,False,True,1)
+                                                                /* useDisk, useMemory, useOffHeap, deserialized, replication=1 */
+    df.take(10). 10 records from 1partition . 1partition gets cached
+    
+    df.count() all 10 partitions gets cached
+    
+
