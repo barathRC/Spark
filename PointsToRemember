@@ -133,5 +133,16 @@ CATALOG METASTORE - HIVE METASTORE
 Invoke using spark.sql
 
 
+SPARK MEMORY ALLOCATION:-
+
+1) spark.driver.memory = 1 GB
+                  +
+   spark.driver.memoryOverhead (CONTAINER or NON-JVM process) = 0.1 (10% or 384 MB)
+
+spark.Executor.memory = 
+spark.Executor.memoryOverhead =
+spark.Executor.offHeap.Size = 
+spark.Executor.PySpark.memory = 
+
 
 
