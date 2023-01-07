@@ -61,7 +61,7 @@ Job is compiled in the driver to arrive a logical plan before spark sql engine o
 Similarly stages and tasks for each executor is determined by the driver itself!
 
 
-SPARK SQL ENGINER AND QUERY PLAN
+SPARK SQL ENGINE AND QUERY PLAN
 
 Spark API - SQL, Dataframe, Dataset 
 Dataset not available for pyspark since dataset is statically typed.
