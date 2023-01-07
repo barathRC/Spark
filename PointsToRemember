@@ -71,7 +71,7 @@ spark job sends unresolved plan to Spark SQL engine
 Each SQL expression is a job
               
                                    (Jobs Stages, tasks)               
-ANALYSIS                          LOGICAL OPTIMIZATION      PHYSICAL PLANNING                                        CODE GENRENATION (codegen) 
+ANALYSIS                          LOGICAL OPTIMIZATION      PHYSICAL PLANNING                                        CODE GENRENATION (wholeCodegen) 
 Unres Logical Plan  - Logical plan  - Optimized Logical Plan  - pHYSICAL Plan - COST MODEL  - Selected Physical plan  - RDDs
                   CATALOG                                                       (Broadcast Join, Sort merge cost, Shuffle hash join costs)
                   (To check for correct col names, syntax, references, functions, commands)
