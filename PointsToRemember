@@ -10,8 +10,8 @@ Scala directly JVM application driver
 
 When you do a spark submit, the RM (YARN) will spin up an Application Master(AM) in one of the worker node (4core 16GB RAM out of 16core 64GB RAM worker node)
 AM requests YARN RM to provision Executor containers. RM provisions the required Exec containers by spinning up them in the worker nodes 
-and providing them to the App driver
-App Driver starts executors in the exec containers
+and providing them to the App master
+App master starts executors in the exec containers
 
 SparkSession is the Driver. Only one SparkSession is valid for an application similar to only oen driver.
 
