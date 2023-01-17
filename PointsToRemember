@@ -13,7 +13,7 @@ AM requests YARN RM to provision Executor containers. RM provisions the required
 and providing them to the App master
 App master starts executors in the exec containers
 
-SparkSession is the Driver. Only one SparkSession is valid for an application similar to only oen driver.
+SparkSession is the Driver. Only one SparkSession is valid for an application similar to only one driver.
 
 
 SPARK SUBMIT
